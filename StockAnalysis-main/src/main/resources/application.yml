@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: StockAnalysis
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?useSSL=true&requireSSL=true&verifyServerCertificate=false
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        
+server.port: 8082
+stock.symbols: AAPL,LPG,LPL,ECO,YMM,DLX,GIS,TE,RPT,BNY,PUMP,EMGAX,EGIIX,EGORX,GESOX,GFAFX,FTFPX,FWTFX
+fmp.api.base-url: https://financialmodelingprep.com/api/v3
+fmp.api.token: ${API_TOKEN}
